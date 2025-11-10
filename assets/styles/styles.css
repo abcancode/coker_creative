@@ -1,0 +1,488 @@
+/* ------------------------------
+    ROOT COLORS & FONTS
+-------------------------------- */
+:root {
+  --clr-light: #fff;
+  --clr-dark: #020202;
+  --clr-biege: #f0ede9;
+  --clr-light-purple: #a35da2;
+  --clr-vintage-plum: #401e37;
+  --clr-accent: #5b1351;
+  --clr-accent-two: #80147d;
+  --clr-accent-three: #401e37;
+}
+
+body {
+  margin: 0;
+  font-family: "Inter", sans-serif;
+  background: var(--clr-light);
+  color: var(--clr-dark);
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: "MADE Bon Voyage", sans-serif;
+}
+
+/* ------------------------------
+    HEADER
+-------------------------------- */
+.header {
+  width: 100%;
+  padding: 20px 0;
+  position: absolute;
+  top: 0;
+  z-index: 100;
+  background-color: var(--clr-light);
+}
+
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: auto;
+}
+
+.header-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* Logo Image */
+.logo img {
+  height: 30px;
+  width: auto;
+  object-fit: contain;
+  display: block;
+}
+
+.nav ul {
+  display: flex;
+  gap: 30px;
+  list-style: none;
+}
+
+.nav a {
+  text-decoration: none;
+  color: var(--clr-dark);
+  font-weight: 400;
+  transition: 0.3s ease;
+  font-size: 15px;
+}
+
+.nav a:hover,
+.nav a.active {
+  color: var(--clr-light-purple);
+}
+
+/* Mobile Menu Toggle */
+.menu-toggle {
+  display: none;
+  font-size: 28px;
+  color: var(--clr-light);
+  cursor: pointer;
+}
+
+/* ------------------------------
+    HERO SECTION
+-------------------------------- */
+.hero {
+  height: 100vh;
+  background-image: url("/assets/images/hero-bg-image.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: top;
+  position: relative;
+  display: flex;
+  align-items: center;
+  text-align: center;
+}
+
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.75);
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  max-width: 750px;
+  margin: auto;
+  color: var(--clr-light);
+}
+
+.hero h1 {
+  font-size: 60px;
+  margin-bottom: 50px;
+  font-weight: 400;
+  line-height: 100%;
+  letter-spacing: 3%;
+}
+
+.hero .subheading {
+  font-size: 18px;
+  margin-bottom: 30px;
+  font-weight: 300;
+}
+
+.hero-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+/* Buttons */
+.btn {
+  padding: 14px 28px;
+  text-decoration: none;
+  font-weight: 500;
+  transition: 0.3s ease;
+}
+
+.btn.primary {
+  background: var(--clr-accent);
+  color: var(--clr-light);
+}
+
+.btn.primary:hover {
+  background: var(--clr-light-purple);
+  color: var(--clr-dark);
+}
+
+.btn.outline {
+  background-color: var(--clr-biege);
+  color: var(--clr-vintage-plum);
+}
+
+.btn.outline:hover {
+  background: var(--clr-dark);
+  color: var(--clr-biege);
+}
+
+/* ============================
+   ESSENCE SECTION
+============================ */
+.section {
+  padding: 80px 0;
+  background: var(--clr-light);
+}
+
+.essence {
+  /* keep consistent container width with header */
+}
+.essence .essence-row {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto 64px;
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* 50/50 split */
+  gap: 48px;
+  align-items: center;
+}
+
+.essence .essence-row:last-child {
+  margin-bottom: 0;
+}
+
+.essence-col.left,
+.essence-col.right {
+  min-width: 0; /* prevent overflow */
+}
+
+/* Text styles */
+.essence-title {
+  font-family: "MADE Bon Voyage", serif;
+  font-size: 44px;
+  line-height: 1;
+  margin: 0 0 16px;
+  color: var(--clr-vintage-plum);
+}
+
+.essence-text {
+  font-family: "Inter", sans-serif;
+  font-size: 16px;
+  line-height: 1.8;
+  color: var(--clr-dark);
+  margin: 0;
+}
+
+/* ---- Right column — slim staggered boxes ---- */
+.essence-stacks {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 14px;
+}
+
+.stack-box {
+  background-image: var(--bg);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  border-radius: 10px;
+  transition: transform 300ms ease, box-shadow 300ms ease;
+  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.08);
+}
+
+/* Staggered heights (short → tall) */
+.stack-box.b1 {
+  height: 140px;
+}
+.stack-box.b2 {
+  height: 190px;
+}
+.stack-box.b3 {
+  height: 240px;
+}
+.stack-box.b4 {
+  height: 300px;
+}
+
+.stack-box:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.12);
+}
+
+/* ---- Bottom-left — signature video text ---- */
+.signature-block {
+  width: 100%;
+}
+
+.signature-svg {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+/* Ensure the video fills the mask area cleanly */
+.signature-video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Optional: subtle shadow under the masked text for contrast on light bg */
+.signature-block::after {
+  content: "";
+  display: block;
+  height: 1px;
+  margin-top: 8px;
+  background: linear-gradient(
+    to right,
+    transparent,
+    rgba(0, 0, 0, 0.08),
+    transparent
+  );
+}
+
+/* ===========================================
+   RESPONSIVE STYLES — MOBILE & TABLET
+=========================================== */
+
+/* ----------- Tablet (≤ 992px) ----------- */
+@media (max-width: 992px) {
+  .hero h1 {
+    font-size: 48px;
+  }
+
+  .hero .subheading {
+    font-size: 16px;
+  }
+
+  .nav ul {
+    gap: 20px;
+  }
+
+  .essence .essence-row {
+    gap: 36px;
+  }
+  .essence-title {
+    font-size: 38px;
+  }
+  /* reduce stagger for shorter viewports */
+  .stack-box.b1 {
+    height: 120px;
+  }
+  .stack-box.b2 {
+    height: 160px;
+  }
+  .stack-box.b3 {
+    height: 200px;
+  }
+  .stack-box.b4 {
+    height: 240px;
+  }
+}
+
+/* ----------- Mobile Navigation (≤ 768px) ----------- */
+@media (max-width: 768px) {
+  /* Show hamburger */
+  .menu-toggle {
+    display: block;
+    color: var(--clr-dark);
+  }
+
+  /* Hide desktop nav */
+  .nav {
+    display: none;
+    position: absolute;
+    top: 85px;
+    right: 0;
+    background: var(--clr-light);
+    width: 100%;
+    padding: 20px 0;
+    text-align: center;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  }
+
+  .nav ul {
+    flex-direction: column;
+    gap: 18px;
+  }
+
+  .nav a {
+    color: var(--clr-dark);
+    font-size: 16px;
+    font-weight: 500;
+  }
+
+  .header {
+    padding: 15px 0;
+  }
+
+  .logo img {
+    height: 48px;
+  }
+
+  /* Hero adjustments */
+  .hero {
+    padding: 0 20px;
+  }
+
+  .hero h1 {
+    font-size: 40px;
+    line-height: 1.2;
+  }
+
+  .hero .subheading {
+    font-size: 16px;
+    padding: 0 10px;
+  }
+
+  .hero-buttons {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .btn {
+    width: 100%;
+    max-width: 260px;
+    margin: auto;
+  }
+
+  .essence .essence-row {
+    grid-template-columns: 1fr; /* stack left over right */
+    gap: 28px;
+    margin-bottom: 52px;
+  }
+
+  /* Make the slim boxes horizontally scrollable for a premium feel */
+  .essence-stacks {
+    display: flex;
+    gap: 12px;
+    overflow-x: auto;
+    padding-bottom: 6px;
+    scroll-snap-type: x proximity;
+  }
+  .stack-box {
+    flex: 0 0 140px;
+    scroll-snap-align: start;
+  }
+  .stack-box.b1 {
+    height: 160px;
+  }
+  .stack-box.b2 {
+    height: 200px;
+  }
+  .stack-box.b3 {
+    height: 240px;
+  }
+  .stack-box.b4 {
+    height: 280px;
+  }
+
+  .essence-title {
+    font-size: 34px;
+  }
+}
+
+/* ----------- Small Mobile (≤ 480px) ----------- */
+@media (max-width: 480px) {
+  .logo img {
+    height: 42px;
+  }
+
+  .hero {
+    padding: 0 15px;
+  }
+
+  .hero h1 {
+    font-size: 32px;
+  }
+
+  .hero .subheading {
+    font-size: 15px;
+  }
+
+  .btn {
+    padding: 12px 20px;
+    font-size: 14px;
+  }
+
+  .nav {
+    top: 75px;
+  }
+
+  .essence-title {
+    font-size: 30px;
+  }
+  .essence-text {
+    font-size: 15px;
+    line-height: 1.7;
+  }
+  .stack-box {
+    flex: 0 0 120px;
+  }
+  .stack-box.b1 {
+    height: 140px;
+  }
+  .stack-box.b2 {
+    height: 180px;
+  }
+  .stack-box.b3 {
+    height: 210px;
+  }
+  .stack-box.b4 {
+    height: 240px;
+  }
+}
+
+/* ----------- Extra Small Devices (≤ 360px) ----------- */
+@media (max-width: 360px) {
+  .hero h1 {
+    font-size: 28px;
+  }
+
+  .hero .subheading {
+    font-size: 14px;
+  }
+
+  .btn {
+    padding: 10px 18px;
+    font-size: 13px;
+  }
+}
